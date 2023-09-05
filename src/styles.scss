@@ -1,0 +1,41 @@
+//breakpoints
+
+$breakpoint-iphone: 32rem;
+$breakpoint-ipad: 76.8rem;
+$breakpoint-desktop: 102.4rem;
+
+$base-color-dark: #121212;
+$base-color-medium: #1a1a1a;
+$base-color-light: #2f2f2f;
+$base-color-lighter: #4d4d4d;
+
+$font-color-bright: #fff;
+$font-color-dim: #b3b3b3;
+
+$bright-green: #1ed760;
+
+@mixin hoverAndFocusTransition {
+  &:hover, &:focus {
+    background-color: $base-color-lighter;
+    border: 1px inset solid $base-color-lighter;
+    outline: none;
+  }
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 10px;
+  color: $font-color-bright;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+body {
+  background-color: $base-color-dark;
+}
+
+

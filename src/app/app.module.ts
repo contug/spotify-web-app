@@ -1,8 +1,10 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 import {FeaturesModule} from "./features/features.module";
+import {AuthService} from "./service/auth.service";
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -10,9 +12,19 @@ import {FeaturesModule} from "./features/features.module";
   ],
   imports: [
     BrowserModule,
-    FeaturesModule
+    FeaturesModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    {provide: APP_INITIALIZER, useFactory: authInitFunction, deps: [AuthService], multi: true},
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
+
+//use authService getAccessToken function in app module for bootstrapping
+export function authInitFunction(authService: AuthService) {
+  return () => authService.getAccessToken();
+}
