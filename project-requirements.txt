@@ -1,0 +1,34 @@
+Your task is to implement a music database application populated with data got from the Spotify API that can
+be found here https://developer.spotify.com/documentation/web-api
+The interface can be very simple, a grid of thumbs. Initially, just fill the screen with some of the most recent
+albums. When the user scrolls down, make the required API calls to have infinite scrolling.
+Add a search album box to the top. When the user types something, display the new content as he types. If
+no content is available with the user-provided keyword, let him know.
+When the user clicks on an album, he should be able to see the album tracks and details. Use a dedicated
+route/page to show selected album and details.
+
+Guidelines
+
+1. Put your project in a private BitBucket or GitHub repository, commit the project and send us the link.
+The repository must not be publicly available.
+2. Create a single page application with whatever framework you prefer.
+3. If you need, use one of the best module bundler tool for the project task.
+4. Pay attention to different screen resolution. The UI must be responsive.
+5. Breakpoint required are Desktop, Tablet and Mobile (Desktop, iPad, iPhone)
+6. Don't use Bootstrap!
+7. Use Typescript!
+
+Bonus tasks
+
+1. Use one or more of the following technologies
+CSS: CSS preprocessor, Flexbox, CSS Grids
+JS: rxjs
+Do you know better ones than those listed here? We love challenges!
+2. Testing. A testable webapp proves how much you care about quality.
+
+Unit Test
+UI Test with Cypress
+
+3. Animate it! Visual effects are always appealing to final users.
+4. Freestyle. We love developers with initiatives. If you have any idea to make the project better, just
+do it and then let us know. You will get some extra points for that.
