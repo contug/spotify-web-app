@@ -21,9 +21,15 @@ export class AuthService {
    * If token is already present in local storage, it checks if it is expired and refreshes it if needed.
    */
   getAccessToken() {
+    console.log('Checking token')
     let token = localStorage.getItem('access_token');
+    this.tokenResponse = {
+      access_token: token ? token : '',
+      expires_in: 0,
+    }
     if (token) {
       let expires_in = localStorage.getItem('expires_in');
+      this.tokenResponse.expires_in = expires_in ? moment().diff(expires_in, 'seconds') : 0;
       if (expires_in) {
         let expires_in_date = moment(expires_in);
         if (moment().isBefore(expires_in_date)) {
@@ -69,6 +75,17 @@ export class AuthService {
       localStorage.setItem('expires_in', moment().add(res.expires_in, 'seconds').format('YYYY-MM-DD HH:mm:ss'));
       this.onTokenTimeout();
     })
+  }
+
+  getHttpHeaders() {
+    let options = {
+      headers: new HttpHeaders()
+    }
+    if (this.tokenResponse) {
+      options.headers = options.headers.set('Authorization', 'Bearer ' + this.tokenResponse.access_token);
+    }
+
+    return options;
   }
 
 }

@@ -1,20 +1,24 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {TitleBarModule} from "./title-bar/title-bar.module";
+import {SearchBarModule} from "./title-bar/search-bar.module";
 import {DashboardModule} from "./dashboard/dashboard.module";
 import {AlbumInfoModule} from "./album-info/album-info.module";
+import {SubscriptionHandlerComponent} from './abstract/subscription-handler/subscription-handler.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    SubscriptionHandlerComponent
+  ],
   imports: [
     CommonModule,
-    TitleBarModule,
+    SearchBarModule,
     DashboardModule,
     AlbumInfoModule
   ],
   exports: [
-    TitleBarModule,
+    SubscriptionHandlerComponent,
+    SearchBarModule,
     DashboardModule,
     AlbumInfoModule
   ]

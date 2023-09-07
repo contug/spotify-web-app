@@ -14,7 +14,7 @@ $font-color-dim: #b3b3b3;
 
 $bright-green: #1ed760;
 
-@mixin hoverAndFocusTransition {
+@mixin hoverAndFocusTransition() {
   &:hover, &:focus {
     background-color: $base-color-lighter;
     border: 1px inset solid $base-color-lighter;
