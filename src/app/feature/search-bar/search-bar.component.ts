@@ -22,7 +22,7 @@ export class SearchBarComponent implements OnInit {
   }
 
   onKeyUp(query: string) {
-    this.dashboardUtilityService.searchSubject.next(query);
+      this.dashboardUtilityService.searchSubject.next(query);
   }
 
 }

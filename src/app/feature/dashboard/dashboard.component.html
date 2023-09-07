@@ -1,1 +1,9 @@
-<p>dashboard works!</p>
+<div class="card-grid-container" *ngIf="albumData.length > 0">
+  <div class="card-item" *ngFor="let album of albumData">
+    <app-album-card [albumData]="album" (click)="navigateToAlbum(album.id)"></app-album-card>
+  </div>
+</div>
+
+<span *ngIf="albumData.length === 0" class="no-results">
+  no results available
+</span>

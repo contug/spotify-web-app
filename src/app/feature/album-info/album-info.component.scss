@@ -1,0 +1,72 @@
+@import "src/styles.scss";
+
+.album {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-card-container {
+    margin: 3rem 0;
+
+  }
+
+  &-tracks-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-track-row {
+    @include hoverAndFocusTransition;
+    @include activeTransition($base-color-lighter);
+
+    border-radius: 1rem;
+    background-color: $base-color-medium;
+    transition: all 0.4s;
+    font-size: 2.5rem;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: $breakpoint-iphone) {
+      width: 70vw;
+      margin: 1rem;
+    }
+    @media (min-width: $breakpoint-ipad) {
+      width: 60vw;
+      margin: 1rem;
+    }
+    @media (min-width: $breakpoint-desktop) {
+      width: 40vw;
+      margin: 1rem;
+    }
+  }
+}
+
+.back-arrow {
+  position: absolute;
+
+  font-size: 2rem;
+  cursor: pointer;
+  max-width: 5rem;
+
+  //range iphone to ipad
+  @media (min-width: $breakpoint-iphone) {
+    top: 15rem;
+    left: 2rem;
+  }
+  @media (min-width: $breakpoint-ipad) {
+    top: 10rem;
+    left: 2rem;
+  }
+
+  &:hover {
+    color: $base-color-light;
+  }
+}
+
+
+

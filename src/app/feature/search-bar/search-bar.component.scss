@@ -2,8 +2,9 @@
 
 .search-bar {
   @include hoverAndFocusTransition; //mixin transition declared in styles.scss
+  @include activeTransition($base-color-lighter); //mixin transition declared in styles.scss
 
-  transition: all 0.2s;
+  transition: all 0.4s;
 
   @media (min-width: $breakpoint-iphone) {
     & {

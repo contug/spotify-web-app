@@ -1,0 +1,58 @@
+@import "src/styles.scss";
+
+@media (min-width: $breakpoint-iphone) {
+  .card {
+    width: 40rem;
+    margin: 1rem;
+  }
+}
+
+@media (min-width: $breakpoint-ipad) {
+  .card {
+    width: 30rem;
+    margin: 1rem;
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .card {
+    max-width: 20rem;
+    margin: 1rem;
+  }
+}
+
+.card {
+  @include hoverAndFocusTransition;
+  @include activeTransition($base-color-lighter);
+
+  transition: all 0.4s;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: $base-color-medium;
+  padding: 1rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+
+  .card-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+    margin-top: 1rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .card-artist {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+}

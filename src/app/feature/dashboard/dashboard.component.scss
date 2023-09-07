@@ -1,0 +1,44 @@
+@import 'src/styles.scss';
+
+@media (min-width: $breakpoint-iphone) {
+  .card-grid-container {
+    // center the column
+
+    display: grid;
+    grid-auto-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    grid-gap: 1rem;
+    grid-auto-rows: minmax(10rem, auto);
+  }
+}
+
+@media (min-width: $breakpoint-ipad) {
+  .card-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+
+  .card-grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-gap: 3rem;
+  }
+}
+
+
+.card-grid-container {
+  margin: 2rem auto;
+}
+
+.no-results {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 2rem;
+  color: $base-color-lighter;
+}

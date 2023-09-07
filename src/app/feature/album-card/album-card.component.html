@@ -1,0 +1,9 @@
+<div class="card">
+  <img [src]="albumData.images[0].url" height="100px" class="card-image">
+  <h1 class="card-title" [ngClass]="albumData.name.length > 20 ? 'card-title-long' : ''">
+    {{albumData.name}}
+  </h1>
+  <h3 class="card-artist">
+    {{albumData.artists[0].name}}
+  </h3>
+</div>

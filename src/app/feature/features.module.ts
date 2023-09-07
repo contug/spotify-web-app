@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {SearchBarModule} from "./title-bar/search-bar.module";
+import {SearchBarModule} from "./search-bar/search-bar.module";
 import {DashboardModule} from "./dashboard/dashboard.module";
 import {AlbumInfoModule} from "./album-info/album-info.module";
 import {SubscriptionHandlerComponent} from './abstract/subscription-handler/subscription-handler.component';
