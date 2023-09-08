@@ -38,14 +38,12 @@ export class AlbumInfoComponent extends SubscriptionHandlerComponent implements 
 
   getTracks(albumId: string) {
     this.apiService.getTracks(albumId).subscribe(response => {
-      console.log(response)
       this.trackResponse = response;
     });
   }
 
   getAlbum(albumId: string) {
     this.apiService.getAlbum(albumId).subscribe(response => {
-      console.log(response)
       this.album = response;
     });
   }

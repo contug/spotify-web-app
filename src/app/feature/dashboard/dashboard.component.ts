@@ -13,7 +13,6 @@ import {Router} from "@angular/router";
 })
 export class DashboardComponent extends SubscriptionHandlerComponent implements OnInit {
 
-  nextUrl?: string = this.dashboardUtilityService.nextUrl;
 
   albumData: Item[] = [];
 
@@ -26,7 +25,7 @@ export class DashboardComponent extends SubscriptionHandlerComponent implements 
   }
 
   @HostListener('window:scroll', ['$event'])
-  onScroll(event: any) {
+  onScroll() {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
       this.dashboardUtilityService.scrollSubject.next(true);
     }
@@ -35,25 +34,20 @@ export class DashboardComponent extends SubscriptionHandlerComponent implements 
   ngOnInit(): void {
     this.dashboardUtilityService.searchResponse$.pipe(takeUntil(this.destroy$)).subscribe(
       response => {
-        console.log(response);
-
         this.albumData = response.albums.items;
       },
       error => {
-        console.log(error);
       });
 
     this.dashboardUtilityService.searchSubject.next(this.dashboardUtilityService.currentQuery);
 
     this.dashboardUtilityService.scrollResponse$.pipe(takeUntil(this.destroy$)).subscribe(
       res => {
-        console.log(res)
         if (res != null) {
           this.albumData.push(...res.albums.items);
         }
       },
       error => {
-        console.log(error);
       });
   }
 

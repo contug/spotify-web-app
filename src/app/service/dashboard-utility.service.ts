@@ -26,7 +26,6 @@ export class DashboardUtilityService {
   searchResponse$: Observable<SearchResponse> = this.searchSubject.pipe(
     debounceTime(500),
     tap((query) => {
-      console.log(query);
       this.currentQuery = query;
     }),
     switchMap(query =>
@@ -47,7 +46,6 @@ export class DashboardUtilityService {
         of(null))),
     tap(response => {
       this.nextUrl = response?.albums.next
-      console.log(this.nextUrl)
     })
   )
 
